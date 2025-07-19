@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Add Request | Maintenance Portal</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/form-dashboard.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h2>Raise a New Maintenance Request</h2>
+    <form id="requestForm" novalidate>
+      
+      <label for="department">Department</label>
+      <select id="department" name="department" required>
+        <option value="" disabled selected>Select department</option>
+        <option value="Production">Production</option>
+        <option value="Manufacturing">Manufacturing</option>
+        <option value="Machining">Machining</option>
+        <option value="Utility">Utility</option>
+        <option value="QA">Quality Assurance</option>
+        <option value="Others">Others</option>
+      </select>
+
+      <label for="machine">Machine Name</label>
+      <input
+        type="text"
+        id="machine"
+        name="machine"
+        placeholder="Enter machine name"
+        required
+      />
+
+      <label for="machineId">Machine ID</label>
+      <input
+        type="text"
+        id="machineId"
+        name="machineId"
+        placeholder="Enter machine identification number"
+        required
+      />
+
+      <label for="description">Issue Description</label>
+      <textarea
+        id="description"
+        name="description"
+        placeholder="Describe the issue in detail"
+        rows="5"
+        required
+      ></textarea>
+
+      <label for="priority">Priority Level</label>
+      <select id="priority" name="priority" required>
+        <option value="" disabled selected>Select priority</option>
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+
+      <label for="timestamp">Issue Reported At</label>
+      <input type="text" id="timestamp" name="timestamp" readonly />
+
+      <label>Upload Image/Document</label>
+      <div class="file-upload-wrapper">
+        <label for="attachment" class="btn">Choose File</label>
+        <input type="file" id="attachment" name="attachment" accept="image/*,.pdf" />
+        <span id="fileName">No file chosen</span>
+      </div>
+      <div class="form-buttons">
+        <button type="submit" class="btn">Submit Request</button>
+        <button type="button" class="btn-secondary" onclick="window.location.href='dashboard.html'">
+          Back to Dashboard
+        </button>
+      </div>
+    </form>
+  </div>
+  <div id="toastContainer" class="toast-container"></div>
+  <script src="../js/add.js"></script>
+</body>
+</html>
